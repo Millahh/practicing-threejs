@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from '@react-three/fiber'
-import './App.css'
+import '../App.css'
 
 const Cube = ({ position, size, color }) => {
   return (
@@ -11,7 +11,7 @@ const Cube = ({ position, size, color }) => {
   </mesh>
   )
 }
-const App = () => { 
+const BasicUseFrame = () => { 
   return (
     <Canvas>
       {/* lighting, has the same intensity to all the directions, so it doesnt show as 3D object */}
@@ -36,4 +36,4 @@ const App = () => {
   )
 }
 
-export default App
+export default BasicUseFrame
