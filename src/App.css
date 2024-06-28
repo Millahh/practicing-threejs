@@ -3,6 +3,7 @@
   height: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -16,7 +17,7 @@ hr{
 
 p{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding-top: 50px;
+  margin-top: 50px;
   text-align: center;
   color:white;
   font-size: large;

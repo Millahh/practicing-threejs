@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
-import { BasicCanvas, BasicUseFrame, BasicSphere }  from "./exploring-threejs";
+import { BasicCanvas, BasicUseFrame, BasicSphere, BasicTorus }  from "./exploring-threejs";
 import './App.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -12,6 +12,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BasicUseFrame />
     <hr></hr>
     <BasicSphere />
+    <hr></hr>
+    <BasicTorus />
   </React.StrictMode>,
 )
 
