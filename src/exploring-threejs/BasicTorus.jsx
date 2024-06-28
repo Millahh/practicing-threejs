@@ -1,11 +1,20 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { useRef } from 'react'
 import '../App.css'
 
 const Torus = ({ position, size, color }) => {
+  const ref = useRef()
+  useFrame((state, delta) => {
+      // delta is difference in time between the current frame and the last frame
+      ref.current.rotation.y += delta *9
+      //you can check through console
+      console.log(delta)
+      console.log(state)
+  })
   return (
-    <mesh position={position}>
+    <mesh position={position} ref={ref}>
       <torusGeometry args={size}/>
       {/* add wireframe to see the outline */}
       <meshStandardMaterial color={color} wireframe/>
