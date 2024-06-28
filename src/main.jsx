@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
-// should use double quotation mark
 import { BasicCanvas, BasicUseFrame }  from "./exploring-threejs";
+import './App.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BasicCanvas />
-    {/* <BasicUseFrame /> */}
+    <hr></hr>
+    <BasicUseFrame />
   </React.StrictMode>,
 )
+
