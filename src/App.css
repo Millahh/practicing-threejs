@@ -13,3 +13,12 @@ hr{
   background-color: white;
   height: 1px;
 }
+
+p{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 50px;
+  text-align: center;
+  color:white;
+  font-size: large;
+  height: 5px;
+}

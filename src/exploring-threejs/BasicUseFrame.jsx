@@ -30,15 +30,18 @@ const Cube = ({ position, size, color }) => {
 }
 const BasicUseFrame = () => { 
   return (
-    <Canvas>
-      {/* lighting, has the same intensity to all the directions, so it doesnt show as 3D object */}
-      <ambientLight intensity={1} />
-      {/* light position, make it looks 3d */}
-      <directionalLight position={[0, 0, 1]}/>
-      
-      <Cube position={[0, 0, 0]} color={"yellow"} size={[1,1,1]} />
-      
-    </Canvas>
+    <>
+      <p>Basic useFrame(): using rotation x, y, z, Math.sin</p>
+      <Canvas>
+        {/* lighting, has the same intensity to all the directions, so it doesnt show as 3D object */}
+        <ambientLight intensity={1} />
+        {/* light position, make it looks 3d */}
+        <directionalLight position={[0, 0, 1]}/>
+        
+        <Cube position={[0, 0, 0]} color={"yellow"} size={[1,1,1]} />
+        
+      </Canvas>
+    </>
   )
 }
 
