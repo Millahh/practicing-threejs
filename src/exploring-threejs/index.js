@@ -4,5 +4,6 @@ import BasicSphere from "./BasicSphere";
 import BasicTorus from "./BasicTorus";
 import BasicTorusKnot from "./BasicTorusKnot";
 import BasicOrbitControl from "./BasicOrbitControl";
+import BasicScene from "./BasicScene";
 
-export { BasicCanvas, BasicUseFrame, BasicSphere, BasicTorus, BasicTorusKnot, BasicOrbitControl };
+export { BasicCanvas, BasicUseFrame, BasicSphere, BasicTorus, BasicTorusKnot, BasicOrbitControl, BasicScene };
