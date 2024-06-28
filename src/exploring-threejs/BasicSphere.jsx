@@ -12,7 +12,7 @@ const Sphere = ({ position, size, color }) => {
   const [isClicked, setIsClicked] = useState(false);
   useFrame((state, delta) => {
       // check if sphere hover
-      const speed = isHovered ? 1 : 0.5;
+      const speed = isHovered&&!isClicked ? 1 : 0.5;
       // delta is difference in time between the current frame and the last frame
       ref.current.rotation.y += delta * speed
       //you can check through console
@@ -41,6 +41,7 @@ const BasicSphere = () => {
   return (
     <>
       <p>Basic sphereGeometry, props size stand for args (size, widhtSegments, heightSegments)</p>
+      <p>Interactive hover and click 3d object</p>
       <Canvas>
         {/* lighting, has the same intensity to all the directions, so it doesnt show as 3D object */}
         <ambientLight intensity={1} />
