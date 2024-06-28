@@ -1,34 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unknown-property */
+import { Canvas } from '@react-three/fiber'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const Cube = ({ position, size, color }) => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <mesh position={position}>
+    <boxGeometry args={size}/>
+    <meshStandardMaterial color={color}/>
+  </mesh>
+  )
+}
+const App = () => { 
+  return (
+    <Canvas>
+      {/* lighting, has the same intensity to all the directions, so it doesnt show as 3D object */}
+      <ambientLight intensity={1} />
+      {/* light position, make it looks 3d */}
+      <directionalLight position={[0, 0, 1]}/>
+      
+      {/* allows us to change the direction of all cubes */}
+      <group position={[0, 0, 0]}>
+        {/* create cube manually  */}
+        <mesh position={[2, -1, 1]}>
+          {/* this is gonna be displayed as a black cube if you dont add ambientlight to it */}
+          <boxGeometry />
+          {/* to add color */}
+          <meshStandardMaterial color={"hotpink"}/>
+        </mesh>
+
+        {/* create cube using component  */}
+        <Cube position={[-2, 1, 1]} color={"yellow"} size={[1,1,1]} />
+      </group>
+    </Canvas>
   )
 }
 
